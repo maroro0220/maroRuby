@@ -13,7 +13,7 @@ doc=Nokogiri:: HTML(response)
 #4. 문서에서 css중 ID가 KOSPI_now 인것을 kospi라는 변수 에 저장.
 #css를 가져오기 위해서 크롬에서 copy selector
 #kospi=doc.css("#newsEndContents")
-kospi=doc.css("#comment195761265 > div > p")
+kospi=doc.css("#highlight_0 > div > div:nth-child(16) > div > strong > a")
 #5.kospi에 저장된 것 중에서 태그 안에 있는 텍스트를 출력한다.
 puts kospi.text
 #nokogiri에서 문법 안에 내용들? 을 가져오려면 .text를 씀
