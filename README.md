@@ -1,4 +1,4 @@
-###처음에 github에 올릴 때 
+### 처음에 github에 올릴 때
 
 
 
@@ -42,6 +42,6 @@
 
 `git commit -m "내가  원하는 말. comment"`
 
-3. 파일들을 원격 저장소에 보내겠다.   
+3. 파일들을 원격 저장소에 보내겠다.    
 
-    `git push origin master`
+   `git push origin master`   
