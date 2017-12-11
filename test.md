@@ -28,6 +28,8 @@
 
 
 
+
+
 ```ruby
 #```ruby하고 엔터치면 ruby스크립트
 require 'httparty'
