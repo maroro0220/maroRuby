@@ -1,0 +1,17 @@
+<!Doctype>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>signed up</title>
+  </head>
+  <body>
+    <h1>Sign up success</h1>
+    <h3>Sign up Result</h3>
+   <h4>your email : <%= @email%></h4>
+    <h4>your name : <%= @name%></h4>
+    <h4>your ID: <%= @id%></h4>
+    <h4>yout pw: <% @pw.length.times do %> * <%end%> </h4>
+    <a href="/">홈으로</a>
+    <a href="/signups">회원 목록</a>
+  </body>
+</html>

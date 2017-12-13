@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h2>글 목록입니다.</h2>  <hr />
+<!-- index랑 같이 보여주기 : each_with_index -->
+<!-- 역순으로 보여주기 : reverse -->
+  <% @sign.reverse.each_with_index do |s,i|%>
+  <%= @sign.length-i%> 번째 유저 <br />
+  email: <%= s[1]%><br />
+  name: <%= s[2]%><br />
+  id: <%= s[3]%><br />
+  <hr />
+  <%end%>
+
+
+<a href="/"> 홈으로 가기 </a>
+</body>
+</html>
