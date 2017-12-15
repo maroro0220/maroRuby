@@ -1,0 +1,14 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>글 쓰는 곳</title>
+  </head>
+  <body>
+    <form action="/update/<%=@post.id%>">
+      <h4>제목 : <br /><input type="text" name="titlee" size="100" value="<%=@post.title%>"/></h4>
+      <h4>글 :</h4>
+      <textarea name="texta" rows="30" cols="100"><%=@post.text%></textarea><br />
+      <input type="submit" value="edit"/>
+    </form>
+  </body>
+</html>
