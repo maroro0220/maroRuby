@@ -1,0 +1,36 @@
+<h1>User index</h1>
+<html>
+  <head>
+      <h3>Welcome</h3>
+  </head>
+  <body>
+    <h3><a href="/new">회원가입</a></h3>
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">e-mail</th>
+        <th scope="col">Name</th>
+        <th scope="col">Time</th>
+        <th scope="col">List</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <hr />
+    <tbody>
+      <% @user.each do |x|%>
+      <tr>
+        <td scope="row"><%=x.mem_id%></td>
+        <td><%=x.mem_email%></td>
+        <td><%=x.mem_name%></td>
+        <td><%=x.created_at%></td>
+        <td><a href="/show/<%=x.id%>">목록 보기</a></td>
+        <td><a href="/edit/<%=x.id%>">정보 수정</a></td>
+        <td><a href="/destroy/<%=x.id%>">회원 탈퇴</a></td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<h1>User index</h1>
+<html>
+  <head>
+      Welcome
+  </head>
+  <body>
+
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">e-mail</th>
+        <th scope="col">Name</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <hr />
+    <tbody>
+      <tr>
+        <td scope="row"><%=@user.mem_id%></td>
+        <td><%=@user.mem_email%></td>
+        <td><%=@user.mem_name%></td>
+        <td><%=@user.created_at%></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="/">홈으로</a>
+  <a href="/edit/<%=@user.id%>">회원 정보 수정</a>
+  <a href="/destroy/<%=@user.id%>">회원 탈퇴</a>
+  </body>
+</html>

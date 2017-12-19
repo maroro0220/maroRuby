@@ -1,0 +1,14 @@
+<h1>게시 글 수정</h1>
+<form action="/post/update/<%=@post.id%>">
+  <div class ="col-sm-3">
+    작성자 : <input type="text" class="form-control" name='username' size='3' value="<%=@post.username%>"/><br />
+  </div>
+    <div class ="col-sm-8">
+    제목 : <input type="text" class="form-control" name='title' value="<%=@post.title%>"/><br />
+    </div>
+    내용 : <div class="form-group">
+    <textarea name='text' class="form-control" cols='50' rows='20'><%=@post.text%></textarea>
+  </div>
+  <button type="submit" class="btn btn-info">전송</button>
+    <!-- <input type="submit" value="전송"/> -->
+</form>

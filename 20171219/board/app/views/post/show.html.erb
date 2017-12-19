@@ -1,0 +1,9 @@
+<p> <%= @post.id%></p>
+<p> <%= @post.username%></p>
+<p> <%= @post.title%></p>
+<p> <%= @post.text%></p>
+<p> <%= @post.created_at%></p>
+
+<p><a class="btn btn-danger" href="/post/destroy/<%=@post.id%>" role="button">삭제</a>
+<a class="btn btn-success" href="/post/edit/<%=@post.id%>" role="button">수정</a>
+<a class="btn btn-info" href="/post/index" role="button">홈</a></p>

@@ -1,0 +1,9 @@
+<h1>JOIN US!!BRO</h1>
+<form action="/update/<%=@user.id%>">
+  ID: <input  type="text" name="ids" value="<%=@user.mem_id%>"/><br />
+  PWD: <input type= "password" name="pwd1" value="<%=@user.mem_pwd%>"/><br />
+  PWD_repeat: <input type= "password" name="pwd2" value="<%=@user.mem_pwd%>"/><br />
+  E-mail: <input  type="email" name="email" value="<%=@user.mem_email%>"/><br />
+  Name: <input  type="text" name="name" value="<%=@user.mem_name%>"/><br />
+  <input type="submit" value="join"/>
+</form>
