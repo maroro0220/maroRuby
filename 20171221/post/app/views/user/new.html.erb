@@ -1,0 +1,9 @@
+<h3>Join us</h3>
+<form action ="/user/create" method="post">
+  Name: <input type="text" name="name" />
+  e-mail: <input type="email" name="email" />
+  password: <input type="password" name="password" />
+  <input type="hidden" name="authenticity_token"  value="<%=form_authenticity_token%>"/>
+  <input type="submit" value="join" />
+
+</form>
