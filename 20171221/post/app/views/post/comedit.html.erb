@@ -1,0 +1,12 @@
+<form action="/post/show" method="post">
+  <div class="form-group" ><h3>
+    <!-- comm=Comment.find(params[:id]) -->
+
+      작성자: </h3> <input type="text" name="name" style="width: 600px;"
+      class="form-control"  value="<%=current_user.name%>" disabled size="7">
+      <h2> 댓글: </h2> <input   style="width: 300px;" type="text" name="text" class="form-control" value="<%=@comm.comm%>">
+  </div>
+  <input type="hidden" name="id" value="<%=@comm.id%>" />
+  <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>"/><br />
+  <input  type="submit"/>
+</form>

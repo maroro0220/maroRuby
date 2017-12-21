@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap Grid System</title>
+  <!-- Lato Font CDN -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!-- Your Custom CSS -->
+	<link rel="stylesheet" href="style.css">
+  <style>
+  h1,h2,h3,h4,p { font-family: 'Lato', sans-serif; }
+  .title {
+  	padding: 30px;
+  	font-size: 1.4rem;
+  	font-weight: 900;
+  	line-height: 3rem;
+  	text-align: center;
+  }
+  .overlay-grid .container {
+  	min-height: 100vh;
+  	transition: 0.1s all ease-in-out;
+  }
+  /* ---------------------------------------
+   * With Gutters
+   * .container > .row
+   * gutter: 15px;
+   * ---------------------------------------
+  */
+  /* Small Devices (sm) */
+  @media screen and (min-width: 576px) {
+  	.overlay-grid .container:hover {
+  	  background-image: linear-gradient(to right, transparent 33.333333%, rgba(89,45,234,.45) 33.333333%, rgba(89,45,234,.45) 66.66666%, transparent 66.66666%), linear-gradient(180deg, transparent 97%, rgb(89,45,234) 97%);
+  	  background-size: 45px 10px;
+    }
+  }
+  /* Medium Devices (md) */
+  @media screen and (min-width: 768px) {
+  	.overlay-grid .container:hover {
+  	  background-image: linear-gradient(to right, transparent 25%, rgba(89,45,234,.45) 25%, rgba(89,45,234,.45) 75%, transparent 75%), linear-gradient(180deg, transparent 97%, rgb(89,45,234) 97%);
+  	  background-size: 60px 10px;
+    }
+  }
+  /* Large Devices (lg) */
+  @media screen and (min-width: 992px) {
+  	.overlay-grid .container:hover {
+  	  background-image: linear-gradient(to right, transparent 18.75%, rgba(89,45,234,.45) 18.75%, rgba(89,45,234,.45) 81.25%, transparent 81.25%), linear-gradient(180deg, transparent 97%, rgb(89,45,234) 97%);
+  	  background-size: 80px 10px;
+    }
+  }
+  /* Extra Large Devices (xl) */
+  @media screen and (min-width: 1200px) {
+  	.overlay-grid .container:hover {
+  	  background-image: linear-gradient(to right, transparent 15.789473684%, rgba(89,45,234,.45) 15.789473684%, rgba(89,45,234,.45) 84.210526316%, transparent 84.210526316%), linear-gradient(180deg, transparent 97%, rgb(89,45,234) 97%);
+  	  background-size: 95px 10px;
+    }
+  }
+  /* Grid System Check */
+  /* to check gutters */
+  /*[class*="col"] { background-color: rgba(31,182,255,.3); }*/
+  /* to check columns */
+  [class*="col"] p {
+  	font-family: 'Lato', sans-serif;
+  	color: #fff;
+  	background-color: #1f2d3d;
+  }
+  </style>
+</head>
+<body class="overlay-grid">
+  <header>
+    <h1 class="title">Bootstrap Grid System</h1>
+  </header>
+
+  <!-- 아래에 코드를 작성하세요! -->
+
+  <!-- 강의 실습 -->
+<div class="container">
+    <div class="row">
+      <div class="col-6 col-md-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+      <div class="col-6 col-md-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+      <div class="col-6 col-md-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+    </div>
+<!--  아무것도 없으면 6칸md중간일 떄 4칸 lg는 제일 클 떄 2칸-->
+    <div class="row">
+      <div class="col-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+      <div class="col-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+      <div class="col-4 col-lg-2"><p>.col-6 .col-md-4</p></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3"><p>.col-md-6 .offset-md-3</p></div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-3">
+        <div class="service-item">
+          <h4>Sturdy Templates</h4>
+          <p>Our templates are updated regularly so they don't break.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="service-item">
+          <h4>Sturdy Templates</h4>
+          <p>Our templates are updated regularly so they don't break.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="service-item">
+          <h4>Sturdy Templates</h4>
+          <p>Our templates are updated regularly so they don't break.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="service-item">
+          <h4>Sturdy Templates</h4>
+          <p>Our templates are updated regularly so they don't break.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- // 강의 실습 -->
+
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

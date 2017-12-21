@@ -1,9 +1,4 @@
-<!--
-  <h4>Id:  <%=@p.id%></h4>
-  <h4>Title:  <%=@p.title%></h4>
-  <h4>Name:  <%=@p.name%></h4>
-  <h4>Text: </h4> <%=@p.text%><br />
-  <h4>Time:  <%=@p.created_at%></h4> -->
+
   <html style="
     margin-top: 50px;
     margin-left: 40px;
@@ -12,11 +7,12 @@
     <div class="form-group" ><h3>
         제목:</h3> <input type="text" name="title"
       style="width: 600px;" class="form-control" size="7" value="<%=@p.title%>" disabled>
-        <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=@p.name%>" disabled>
+        <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=current_user.name%>" disabled>
     </div>
     <div class="form-group">
       <h5>글 </h5>
-   <textarea style="width: 600px;" class="form-control" name="text" rows="10" cols="20" disabled><%=@p.text%></textarea>
+   <textarea style="width: 600px;" class="form-control" name="text"
+   rows="10" cols="20" disabled><%=@p.text%></textarea>
   </div>
 </form>
   <hr />
@@ -28,7 +24,7 @@
   내용: <%=com.comm%>
   시간: <%=com.created_at%>
   </h5>
-  <a href="/post/comedit">수정</a>
+  <a href="/post/comedit/<%=com.id%>">수정</a>
   <a href="/post/comdel/<%=com.id%>" data-method="delete"
   data-confirm="delete?">삭제</a>
   <br /><br />
@@ -36,7 +32,8 @@
   <hr />
   <form action="/post/add_comment" method="post">
     <div class="form-group" ><h3>
-        작성자: </h3> <input type="text" name="name" style="width: 600px;" class="form-control" size="7">
+        작성자: </h3> <input type="text" name="name" style="width: 600px;"
+        class="form-control"  value="<%=current_user.name%>" disabled size="7">
         <h2> 댓글: </h2> <input   style="width: 300px;" type="text" name="text" class="form-control">
     </div>
     <input type="hidden" name="id" value="<%=@p.id%>" />

@@ -22,18 +22,29 @@ class UserController < ApplicationController
     user=User.find_by(email: params[:email])
     @msg=""
     if user.nil?
-      @msg="noononomember"
+      # @msg="noononomember"
+      flash[:alert] = "등록되지 않은 회원입니다. 등록해주세요."
+      redirect_to '/user/new'
     #2. mail주소가 db에 있으면,
     #2-1 비밀번호 확인. 맞음 로그인인
     #2-2 틀리면, 비밀번호가 틀렸습니다.
   else
     if user.password == params[:password]
-        @msg="login Success"
+        # @msg="login Success"
+        flash[:notice]="#{user.name} Login Success"
         session[:user_id]=user.id
+        redirect_to '/'
     else
-      @msg="password error"
+      flash[:alert]="password wrong"
+      redirect_to :back
     end
   end
+  end
+
+  def logout
+    session.clear
+    flash[:alert]="Logout Successsssssssssssss"
+    redirect_to '/'
   end
 
 end

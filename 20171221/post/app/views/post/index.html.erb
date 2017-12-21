@@ -4,7 +4,6 @@
     margin-right: 40px;
 ">
 <div class="text-right"  style="font-weight: bold ;font-size:30px">
-  <a href="/user/new">JOIN  </a> <a href="/user/login">LOGIN</a>
   <a href="/user/index">LIST</a>
 </div>
 <h1>Test Board</h1>
@@ -30,7 +29,7 @@
     <tr class="bg-warning">
       <th scope="row"><%=post.id%></th>
       <td><%=post.title%></td>
-      <td><%=post.name%></td>
+      <td><%=User.find(post.user_id).name%></td>
       <td><%=post.text%></td>
       <td>  <%=post.created_at%></td>
       <td>  <a href="/post/show/<%=post.id%>">보기</a> </td>

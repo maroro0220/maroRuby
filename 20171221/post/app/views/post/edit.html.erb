@@ -2,7 +2,8 @@
   <div class="form-group" ><h3>
       제목:</h3> <input type="text" name="title"
     style="width: 600px;" class="form-control" size="7" value="<%=@post.title%>">
-      <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=@post.name%>">
+      <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"
+      value="<%=current_user.name%>" disabled>
   </div>
   <div class="form-group">
  <textarea style="width: 600px;" class="form-control" name="text" rows="20" cols="20"><%=@post.text%></textarea>

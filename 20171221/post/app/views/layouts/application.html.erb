@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html style="
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 30px;"
+>
 <head>
   <title>Post</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -11,15 +15,39 @@
 <link href="https://fonts.googleapis.com/css?family=Bungee|Cabin|Dosis|Fjalla+One|Josefin+Sans|Oxygen|PT+Sans+Narrow|Rubik|Varela+Round|Work+Sans|Yanone+Kaffeesatz" rel="stylesheet">
 
   <style>body{font-family: 'PT Sans Narrow', sans-serif;}</style>
+
+<nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
+<!-- <a href="/" style="font-size:20px ; font-weight:bold" class="navbar-brand">Home</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" style="font-size:20px ; font-weight:bold" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>
 </head>
 <body>
-
-<!-- <%=#User.find(session[:user_id]).name%> -->
+<!-- #<%#=User.find(session[:user_id]).name%> -->
+<%= render 'layouts/flash'%>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
   <div class="text-right" style="font-size:20px ; font-weight:bold">
-    Name: <%=User.find(session[:user_id]).name%>
+    <% unless current_user.nil?%>
+      current user name: <%=current_user.name%>
+      <a href="/user/logout">Logout</a>
+    <%else%>
+      <a href="/user/new">JOIN  </a> /
+      <a href="/user/login">LOGIN</a>
+    <%end%>
+
+  <!--   Name: #<%#=User.find(session[:user_id]).name%> -->
   </div>
   <%= yield %>
 

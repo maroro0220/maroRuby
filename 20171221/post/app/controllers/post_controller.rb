@@ -1,4 +1,5 @@
 class PostController < ApplicationController
+  before_action :authorize, except: [:index]
   def index
     @post=PostList.all
   end
@@ -12,22 +13,24 @@ class PostController < ApplicationController
 
   def create
     title=params[:title]
-    name=params[:name]
+    user=User.find(session[:user_id])
     text=params[:text]
-    PostList.create(title: title, name: name, text: text)
+    PostList.create(title: title, user_id: user.id, text: text)
     redirect_to '/'
   end
 
   def update
     post=PostList.find(params[:id])
-    post.update(title: params[:title],name: params[:name], text: params[:text])
+    post.update(title: params[:title],user_id: current_user.id, text: params[:text])
     redirect_to "/post/show/#{params[:id]}"
   end
 
   def destroy
     post=PostList.find(params[:id])
-    post.destroy
-    redirect_to '/'
+    if post.user_id==current_user.id
+      post.destroy
+    end
+  redirect_to '/'
   end
 
   def show
@@ -45,7 +48,7 @@ class PostController < ApplicationController
     redirect_to "/post/show/#{post}"
   end
   def comedit
-
+    @comm=Comment.find(params[:id]) 
   end
 
 end
