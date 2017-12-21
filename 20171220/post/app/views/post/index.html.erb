@@ -1,0 +1,43 @@
+<html style="
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 40px;
+">
+<h1>Test Board</h1>
+<body>
+  <a href="/new">WRITE</a>
+  <hr />
+
+  <table class="table table-bordered table-striped ">
+  <thead>
+    <tr class="bg-danger">
+      <th scope="col">Post Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Name</th>
+      <th scope="col">Text</th>
+      <th scope="col">Created Time</th>
+      <th scope="col">View</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>  <%@post.each do |post|%>
+    <tr class="bg-warning">
+      <th scope="row"><%=post.id%></th>
+      <td><%=post.title%></td>
+      <td><%=post.name%></td>
+      <td><%=post.text%></td>
+      <td>  <%=post.created_at%></td>
+      <td>  <a href="/show/<%=post.id%>">보기</a> </td>
+      <td>  <a href="/edit/<%=post.id%>">수정</a> </td>
+      <td>  <a data-confirm="Are you sure?" data-method="delete" href="/destroy/<%=post.id%>">삭제</a></td>
+    </tr>
+      <%end%>
+  </tbody>
+</table>
+
+
+
+</body>
+</html>

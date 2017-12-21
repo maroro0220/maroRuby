@@ -1,0 +1,12 @@
+<form action="/update/<%=@post.id%>" method="post">
+  <div class="form-group" ><h3>
+      제목:</h3> <input type="text" name="title"
+    style="width: 600px;" class="form-control" size="7" value="<%=@post.title%>">
+      <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=@post.name%>">
+  </div>
+  <div class="form-group">
+ <textarea style="width: 600px;" class="form-control" name="text" rows="20" cols="20"><%=@post.text%></textarea>
+</div>
+<input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>"/><br />
+<input type="submit" />
+</form>
