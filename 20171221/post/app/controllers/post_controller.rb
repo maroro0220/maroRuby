@@ -6,6 +6,10 @@ class PostController < ApplicationController
 
   def edit
     @post=PostList.find(params[:id])
+  if @post.user_id==current_user.id
+  else
+    redirect_to '/'
+    end
   end
 
   def new

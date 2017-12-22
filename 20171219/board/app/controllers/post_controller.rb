@@ -28,6 +28,7 @@ class PostController < ApplicationController
       #@변수를 통해서 erb 파일에서 보여줌
       @post=Post.find(params[:id])
       #id는 routes에서 주소로 받아올 떄 쓰는거
+      @comments=Comment.all
   end
 
   def destroy
@@ -55,4 +56,10 @@ class PostController < ApplicationController
 
     redirect_to "/post/show/#{params[:id]}"
   end
+
+  def add_comment
+      Comment.create(content: params[:content],post_id: params[:id])
+      redirect_to :back #이전으로 보낼께
+  end
+
 end

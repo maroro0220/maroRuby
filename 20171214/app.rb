@@ -5,7 +5,6 @@ require 'data_mapper' # metagem, requires common plugins too.
 # need install dm-sqlite-adapter
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/blog.db")
 #datamapper를 쓸건데 default 쓸거고 dir을 현재 디렉토리 밑에 쓸거다
-
 class Post   #테이블 이름 Post.
   #property가 각 열 정보. 이름, 속성
   include DataMapper::Resource
@@ -14,6 +13,7 @@ class Post   #테이블 이름 Post.
   property :text, Text
   property :created_at, DateTime
 end
+
 class User
   include DataMapper::Resource
   property :id, Serial

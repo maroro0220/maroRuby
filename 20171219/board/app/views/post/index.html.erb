@@ -25,7 +25,7 @@
       <td><div ><%= post.text %></td>
       <td><%= post.created_at %></td>
       <td><a href="/post/show/<%=post.id%>" style="color:black">View</a></td>
-      <td><a href="/post/destroy/<%=post.id%>">Delete</a></td>
+      <td><a href="/post/destroy/<%=post.id%>" data-confirm="sure?" data-method="delete">Delete</a></td>
       <td><a href="/post/edit/<%=post.id%>">Edit</a></td>
     </tr>
   <% end %>

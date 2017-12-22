@@ -30,7 +30,7 @@
 
         <th scope="row"><%=post.id%></th>
         <td><%=post.title%></td>
-        <td><%= post.user_id %></td>
+        <td><%= User.find(post.user_id).name %></td>
         <td><%=post.text%></td>
         <td><%=post.created_at%></td>
 
