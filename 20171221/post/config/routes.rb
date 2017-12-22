@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'post/show/:id' => 'post#show'
   get 'post/comedit/:id' => 'post#comedit'
+  post 'post/comupdate/:id' => 'post#comupdate'
   post 'post/add_comment' => 'post#add_comment'
   delete 'post/comdel/:id' => 'post#comdel'
 

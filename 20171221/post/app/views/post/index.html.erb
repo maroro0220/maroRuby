@@ -25,13 +25,15 @@
 
     </tr>
   </thead>
-  <tbody>  <%@post.each do |post|%>
+  <tbody>  <%@posts.each do |post|%>
     <tr class="bg-warning">
-      <th scope="row"><%=post.id%></th>
-      <td><%=post.title%></td>
-      <td><%=User.find(post.user_id).name%></td>
-      <td><%=post.text%></td>
-      <td>  <%=post.created_at%></td>
+
+        <th scope="row"><%=post.id%></th>
+        <td><%=post.title%></td>
+        <td><%= post.user_id %></td>
+        <td><%=post.text%></td>
+        <td><%=post.created_at%></td>
+
       <td>  <a href="/post/show/<%=post.id%>">보기</a> </td>
       <td>  <a href="/post/edit/<%=post.id%>">수정</a> </td>
       <td>  <a data-confirm="Are you sure?" data-method="delete" href="/post/destroy/<%=post.id%>">삭제</a></td>

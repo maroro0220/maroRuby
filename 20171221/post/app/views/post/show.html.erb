@@ -6,13 +6,14 @@
   <form action="/">
     <div class="form-group" ><h3>
         제목:</h3> <input type="text" name="title"
-      style="width: 600px;" class="form-control" size="7" value="<%=@p.title%>" disabled>
-        <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=current_user.name%>" disabled>
+      style="width: 600px;" class="form-control" size="7" value="<%=@p.title%>" readonly  >
+
+        <h5> 작성자:</h5> <input   style="width: 300px;" type="text" name="name" class="form-control"  value="<%=current_user.name%>" readonly>
     </div>
     <div class="form-group">
       <h5>글 </h5>
    <textarea style="width: 600px;" class="form-control" name="text"
-   rows="10" cols="20" disabled><%=@p.text%></textarea>
+   rows="10" cols="20" readonly><%=@p.text%></textarea>
   </div>
 </form>
   <hr />
@@ -30,15 +31,18 @@
   <br /><br />
   <%end%>
   <hr />
+
   <form action="/post/add_comment" method="post">
     <div class="form-group" ><h3>
         작성자: </h3> <input type="text" name="name" style="width: 600px;"
-        class="form-control"  value="<%=current_user.name%>" disabled size="7">
+        class="form-control"  value="<%=current_user.name%>" readonly size="7">
         <h2> 댓글: </h2> <input   style="width: 300px;" type="text" name="text" class="form-control">
     </div>
     <input type="hidden" name="id" value="<%=@p.id%>" />
-    <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>"/><br />
+    <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>"/><br />
     <input  type="submit"/>
   </form>
+
   <br />
   <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">home</a>
